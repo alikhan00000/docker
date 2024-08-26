@@ -1,0 +1,46 @@
+
+//Colors
+$white: #fff;
+$black: #000;
+$primary: #8D817B; // dark gray
+$secondary: #8A532C; // brown
+$color-three: #2ED9C3; // aqua
+$color-four: #AE1857; // violet
+$color-five: #748CC7; // purple
+$action: #D3222A; // red
+$light: #C6C0BD; // light gray
+$dark: #5c5c5c; // darker gray
+$dark-blue: #004750;
+
+//Text Colors (you can also use styled components)
+.tc-white { color: $white !important;}
+.tc-black { color: $black !important;}
+.tc-primary { color: $primary !important;}
+.tc-secondary { color: $secondary !important;}
+.tc-action { color: $action !important;}
+.tc-light { color: $light !important;}
+.tc-dark { color: $dark !important;}
+
+//BG Colors (you can also use styled components)
+.bg-white { background-color: $white !important;}
+.bg-black { background-color: $black !important;}
+.bg-primary { background-color: $primary !important;}
+.bg-secondary { background-color: $secondary !important;}
+.bg-action { background-color: $action !important;}
+.bg-light { background-color: $light !important;}
+.bg-dark { background-color: $dark !important;}
+
+// Links
+$a-tags: 'a, a:visited';
+$a-tags-hover: 'a:hover, a:active, a:focus';
+
+//Fonts via mixin
+@include font-face('Apercu', '../fonts/Apercu-Regular', 400, normal, eot ttf woff);
+@include font-face('Apercu', '../fonts/Apercu-Medium', 500, normal, eot ttf woff);
+@include font-face('Apercu', '../fonts/Apercu-Bold', 700, normal, eot ttf woff);
+@include font-face('Apercu', '../fonts/Apercu-Black', 800, normal, eot ttf woff);
+@include font-face('Univers', '../fonts/UniversLTStd', 400, normal, eot ttf woff);
+@include font-face('Univers', '../fonts/UniversLTStd-Bold', 700, normal, eot ttf woff);
+@include font-face('Univers', '../fonts/UniversLTStd-Black', 800, normal, eot ttf woff);
+@include font-face('Univers Condensed', '../fonts/UniversLTStd-Cn', 400, normal, eot ttf woff);
+@include font-face('Univers Condensed', '../fonts/UniversLTStd-BoldCn', 700, normal, eot ttf woff);

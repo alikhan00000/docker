@@ -1,0 +1,69 @@
+
+// 100% height & 100% width
+.h-100 { height: 100%; }
+.w-100 { width: 100% ; }
+
+// Display Classes
+.d-block { display: block; }
+.d-none { display: none; }
+.d-inline { display: inline !important;}
+.d-inline-block { display: inline-block;}
+.d-flex { display: flex;}
+.d-inline-flex { display: inline-flex;}
+
+// Border Helpers
+.border-0 { border: none!important;}
+
+// Border Radius Helpers 
+.rounded-circle { border-radius: 50% !important;}
+.rounded-0 { border-radius: 0 !important;}
+
+// Position Helpers
+.p-static { position: static!important;}
+.p-relative { position: relative!important;}
+.p-absolute { position: absolute!important;}
+.p-fixed { position: fixed!important;}
+.p-sticky { position: sticky!important;}
+
+// Font Weight Helpers
+.fw-light {font-weight: 300!important;}
+.fw-regular {font-weight: 400!important;}
+.fw-medium {font-weight: 500!important;}
+.fw-semi-bold {font-weight: 600!important;}
+.fw-bold {font-weight: 700!important;}
+.fw-extra-bold {font-weight: 800!important;}
+
+// Text Helpers
+.text-uppercase { text-transform: uppercase;}
+.text-underline { text-decoration: underline;}
+.text-center {text-align: center;}
+.text-right {text-align: right;}
+
+.mx-auto {
+  margin: 0 auto;
+}
+
+
+.float-right {
+  float: right;
+}
+
+// No Bullets for Lists
+.no-bullet, .no-bullets {
+  margin-left: 0 !important;
+  li {
+    list-style-type: none;
+    background: none;
+  }
+}
+
+.list-inline {
+  padding-left: 0;
+  list-style: none;
+  li {
+    display: inline;
+    &:not(:last-child) {
+      margin-right: .5rem;
+    }
+  }
+}

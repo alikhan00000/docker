@@ -1,0 +1,237 @@
+// Main Navigation
+.main-navigation {
+  ul {
+    display: flex;
+    width: 100%;
+    margin: 0;
+    background-color: $primary;
+    li {
+      background-color: $primary;
+      width: inherit;
+      text-align: center;
+      border-right: 3px solid $white;
+      margin: 0!important;
+      &:last-child {
+        border: none;
+      }
+      #{$a-tags} {
+        font-family: "Univers", sans-serif;
+        font-size: 1.375rem;
+        font-weight: 700;
+        color: $white;
+        position: relative;
+        padding: 0.75rem 0;
+        display: block;
+      }
+      &:hover {
+        color: $primary;
+        background-color: $white;
+        #{$a-tags} {
+          color: $primary;
+          span {
+            border-bottom: 2px solid $primary;
+            padding: 0 0 0.5rem !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+a.active {
+  color: $primary!important;
+  background-color: $white;
+  span {
+    border-bottom: 2px solid $primary;
+    padding: 0 0 0.5rem !important;
+  }
+}
+
+// Navigation displayed depending on brand
+body.home,
+body.inqovi,
+body.lytgobi {
+  nav.lonsurf-nav {
+    display: none;
+  }
+}
+
+body.lonsurf,
+body.lytgobi {
+  nav.inqovi-nav {
+    display: none;
+  }
+}
+
+body.home,
+body.inqovi,
+body.lonsurf {
+  nav.lytgobi-nav {
+    display: none;
+  }
+}
+
+// Mobile Navigation
+.mobile-nav {
+  .nav {
+    width: 100%;
+    height: auto;
+    background-color: $primary;
+    padding: 0 2rem 0 2rem;
+    top: 0;
+    left: 0;
+    max-height: 0;
+    transition: max-height .5s ease-out;
+    position: fixed;
+    bottom: 0;
+    z-index: 1045;
+    overflow: scroll;
+    input ~ label {
+      font-family: "Univers Condensed", sans-serif;
+      font-size: 2.3125rem;
+      font-weight: 700;
+      color: $white;
+      display: table;
+      padding: 0 2.625rem 1rem 0.5rem;
+      position: relative;
+      cursor: pointer;
+      z-index: 3;
+      &.inqovi-label {
+        margin-top: 5.625rem;
+      }
+      &::before,
+      &::after {
+        background: $white;
+        content: '';
+        display: block;
+        height: 25px;
+        position: absolute;
+        width: 2px;
+        top: 0.875rem;
+        // right: -1.5rem;
+        right: 1rem;
+        z-index: 6;
+      }
+      &::before {
+        transform: rotate(-90deg);
+        
+      }
+      &::after {
+        transform: rotate(0deg);
+      }
+    }
+
+    input.inqovi-input:checked ~ label.inqovi-label,
+    input.lonsurf-input:checked ~ label.lonsurf-label,
+    input.lytgobi-input:checked ~ label.lytgobi-label {
+      background: transparent;
+      &::before,
+      &::after {
+        transform: rotate(-90deg);
+      }
+    }
+
+// Displays dropdown on click
+    input.inqovi-input:checked ~ ul.inqovi-menu,
+    input.lonsurf-input:checked ~ ul.lonsurf-menu,
+    input.lytgobi-input:checked ~ ul.lytgobi-menu {
+      display: block;
+    }
+  }
+
+  .menu {
+    margin: 0 0 5rem;
+    list-style: none;
+    margin-bottom: 2rem;
+    display: none;
+    & li {
+      border-bottom: 1px solid $white;
+    }
+    #{$a-tags} {
+      font-size: 1.1875rem;
+      font-weight: 500;
+      line-height: 1.625rem;
+      display: block;
+      padding: 1rem 0 1rem 0.5rem;
+      color: $white;
+    }
+    a.active {
+      font-weight: 700!important;
+      span {
+        border: none;
+      }
+    }
+    #{$a-tags-hover} {
+      color: $white;
+      background-color: $white;
+    }
+  }
+
+
+  // Hamburger Icon
+  .hamb {
+    cursor: pointer;
+    float: right;
+    padding: 2.875rem 1.25rem 0.5rem;
+    position: absolute;
+    right: 0;
+    z-index: 2000;
+    @include breakpoint(medium only) {
+      padding-top: 3rem;
+    }
+    .hamb-line {
+      background: $white;
+      display: block;
+      height: 2px;
+      position: relative;
+      width: 1.5rem;
+      @include breakpoint(medium only) {
+        height: 5px;
+      }
+      &::before,
+      &::after {
+        background: $white;
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        transition: all .2s ease-out;
+        width: 100%;
+      }
+      &::before{
+        top: 5px;
+        @include breakpoint(medium only) {
+          top: 8px;
+        }
+      }
+      &::after{
+        top: -5px;
+        @include breakpoint(medium only) {
+          top: -8px;
+        }
+      }
+    }
+  }
+
+  // Hamburger Icon Toggle
+  .side-menu {
+    display: none; // the checkbox
+    &:checked ~ nav{
+      max-height: initial;
+    }
+    &:checked ~ .hamb {
+      position: fixed;
+      .hamb-line {
+        background: transparent;
+        &::before {
+          transform: rotate(-45deg);
+          top: 0;
+        }
+        &::after {
+          transform: rotate(45deg);
+          top: 0;
+        }
+      }
+    }
+  }
+}

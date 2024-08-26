@@ -1,0 +1,140 @@
+body.home {
+  .isi {
+    display: none;
+  }
+}
+
+body.inqovi {
+ .isi #lonesurfISI,
+ .isi #lytgobiISI {
+    display: none;
+  }
+}
+
+body.lonsurf {
+ .isi #inqoviISI,
+ .isi #lytgobiISI {
+  display: none;
+  }
+}
+
+body.lytgobi {
+  .isi #lonesurfISI,
+  .isi #inqoviISI {
+    display: none;
+  }
+}
+
+.isi {
+  .relative-isi {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    > .row {
+      @include breakpoint(xlarge up) {
+        padding-left: 2.25rem;
+        padding-right: 2.25rem;
+      }
+    }
+  }
+  &.true .sticky-isi {
+    display: none;
+  }
+  &.closed .sticky-isi {
+    height: 208px;
+    overflow-y: hidden;
+  }
+  &.open .sticky-isi {
+    height: 100%;
+    overflow-y: scroll;
+    button {
+      transform: scaleY(-1); 
+    }
+  }
+  .sticky-isi {
+    background: $white;
+    bottom: 0;
+    box-shadow: 0.9375rem 0 1.25rem 0.0625rem rgba($black,.32);
+    opacity: 1;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    padding-top: 1.5rem;
+    .row {
+      @include breakpoint(xlarge up) {
+        padding-left: 2.25rem;
+        padding-right: 2.25rem;
+      }
+    }
+
+  button {
+    cursor: pointer;
+    @include breakpoint(small down) {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+  strong {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.5rem;
+    color: $secondary;
+    display: block;
+    margin-bottom: 1rem;
+  }
+  em {
+    font-size: 1rem;
+    font-weight: 700;
+    font-style:normal;
+    line-height: 1.5rem;
+    color: $black;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 1rem;
+  }
+  p {
+    font-size: 1rem;
+    line-height: 1.625rem;
+    color: $black;
+  }
+  #{$a-tags} {
+    color: $secondary;
+    text-decoration: underline
+  }
+  #{$a-tags-hover} {
+    color: $black;
+    text-decoration: underline;
+  }
+}
+
+// ISI conditional for "short" pages
+body.inqovi-pharma.isi-short-on,
+body.lonsurf-pharma.isi-short-on,
+body.lytgobi-patients.isi-short-on,
+body.lytgobi-hcp.isi-short-on,
+body.lytgobi-pharma.isi-short-on {
+  .sticky-isi {
+    display: block;
+  }
+}
+
+.isi {
+  p {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+  }
+  .header {
+    font-size: 1.375rem;
+    font-weight: bold;
+    line-height: 1.5rem;
+  }
+  #inqoviISI .header {
+    color: #333F48;
+  }
+  #lonesurfISI .header {
+    color: $color-four;
+  }
+  #lytgobiISI .header {
+    color: $dark-blue;
+  }
+}

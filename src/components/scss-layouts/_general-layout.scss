@@ -1,0 +1,334 @@
+html {
+  height: 100%;
+}
+
+body {
+  font-family: "Univers", sans-serif;
+  position: relative;
+  height: 100%
+}
+
+.mid-section {
+  padding-bottom: 0;
+  > .row {
+    @include breakpoint(xlarge up) {
+      padding-left: 2.25rem;
+      padding-right: 2.25rem;
+    }
+  }
+}
+
+#gatsby-focus-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+//Fix target issues
+.pdf-download {
+  display: inline-block;
+  * {
+    pointer-events: none;
+  }
+}
+
+header {
+  .row {
+    &-logo-bar {
+      border-bottom: 3px solid $white;
+      .column {
+        &-logo {
+          padding-top: 1.5rem;
+          padding-bottom: 1.5rem;
+          @include breakpoint(large up) {
+            padding-left: 1rem;
+            padding-right: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+          }
+          @include breakpoint(medium only) {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+          }
+          @include breakpoint(small down) {
+            padding-left: 1rem;
+            padding-bottom: 0.5rem;
+          }
+        }
+        &-resources {
+          padding-top: 0;
+          padding-bottom: 0;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          @include breakpoint(xlarge down) {
+            align-items: center;
+          }
+          @include breakpoint(medium only) {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+          }
+          @include breakpoint(small down) {
+            border-top: 1px solid $white;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+          }
+          strong {
+            font-family: "Univers Condensed", sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: $white;
+            line-height: 1.5625rem;
+            text-transform: uppercase;
+            @include breakpoint(small down) {
+              font-size: 1.5625rem;
+            }
+          }
+        }
+        &.logo-one,
+        &.logo-two,
+        &.logo-three {
+          border-right: 3px solid $white;
+          background-color: $light;
+          cursor: pointer;
+          padding: 0;
+          .gatsby-image-wrapper {
+            filter: invert(51%) sepia(2%) saturate(749%) hue-rotate(335deg) brightness(65%) contrast(85%);
+          }
+          &.logo-two {
+            border-right: 3px solid #fefefe;
+            .gatsby-image-wrapper {
+              filter: invert(51%) sepia(5%) saturate(200%) hue-rotate(335deg) brightness(68%) contrast(85%);
+            }
+          }
+          &.logo-three {
+            border: none;
+            .gatsby-image-wrapper {
+              filter: invert(51%) sepia(5%) saturate(200%) hue-rotate(335deg) brightness(65%) contrast(85%);
+            }
+          }
+          #{$a-tags} {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+          }
+          #{$a-tags-hover} {
+            background-color: $white;
+            .gatsby-image-wrapper {
+              filter: initial;
+            }
+          }
+        }
+      }
+    }
+    &.hcp-only {
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+      @include breakpoint(xlarge up) {
+        padding-right: 3rem;
+      }
+      @include breakpoint(small down) {
+        font-size: 0.8125rem;
+        color: $primary;
+      }
+    }
+  }
+}
+
+body.home,
+body.inqovi,
+body.lonsurf,
+body.lytgobi {
+  .inqoviReg,
+  .lonReg,
+  .lytgobiReg {
+    display: none;
+  }
+}
+
+body.inqovi {
+  header {
+    .logo-one {
+      background-color: $white!important;
+      .gatsby-image-wrapper {
+        filter: initial!important;
+        background-color: $white!important;
+      }
+    }
+  }
+  .inqoviReg {
+    font-size: 0.625rem;
+    display: block;
+    margin-bottom: 0.75rem;
+    text-align: left;
+    @include breakpoint(small only) {
+      font-size: 0.8125rem;
+      text-align: center;
+     }
+  }
+}
+
+body.lonsurf {
+  header {
+    .logo-two {
+      background-color: $white!important;
+      .gatsby-image-wrapper {
+        filter: initial!important;
+        background-color: $white!important;
+      }
+    }
+  }
+  .lonReg {
+    font-size: 0.625rem;
+    text-align: center;
+    display: block;
+    text-align: left;
+    margin-bottom: 0.75rem;
+    @include breakpoint(small only) {
+      font-size: 0.8125rem;
+      text-align: center;
+     }
+  }
+}
+
+body.lytgobi {
+  header {
+    .logo-three {
+      background-color: $white!important;
+      .gatsby-image-wrapper {
+        filter: initial!important;
+        background-color: $white!important;
+      }
+    }
+  }
+  .lytgobiReg {
+    font-size: 0.625rem;
+    display: block;
+    margin-bottom: 0.75rem;
+    text-align: left;
+    @include breakpoint(small only) {
+      font-size: 0.8125rem;
+      text-align: center;
+     }
+  }
+}
+
+footer {
+  margin-top: auto;
+  .container-row {
+    padding: 3rem 0;
+    background-color: #f5f4f4;
+    @include breakpoint(xlarge up) {
+      padding-left: 2rem;
+    }
+  }
+  .footer-logo {
+    display: flex;
+    align-self: center;
+    margin-bottom: 0.25rem;
+    @include breakpoint(medium only) {
+     justify-content: center;
+    }
+  }
+  ul {
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+    @include breakpoint(medium up) {
+      display: flex;
+      // align-items: center;
+      column-gap: initial;
+    }
+    li {
+      @include breakpoint(small only) {
+        font-size: 0.8125rem;
+        display: inline;
+        &:not(:last-child) {
+          margin-right: 0.5rem!important;
+        }
+      }
+    }
+    li:not(:last-child){
+      margin-right: 0;
+      @include breakpoint(medium up) {
+        display: inline;
+        margin-right: 2rem!important;
+      }
+    }
+    &.rights-list {
+      @include breakpoint(medium up) {
+      margin-left: 2.625rem !important;
+      }
+    }
+  }
+  .copy-column {
+    display: flex;
+    @include breakpoint(small down) {
+      display: initial;
+    }
+    @include breakpoint(medium only) {
+      margin-top: 0.5rem;
+      justify-content: center;
+    }
+    li {
+      font-size: 0.625rem;
+    }
+  }
+
+  .footer-nav {
+    padding-bottom: 0.625rem;
+    #{$a-tags} {
+      font-size: 0.625rem;
+      color: $black;
+      text-decoration: underline;
+      &:hover {
+        color: $secondary;
+      }
+    }
+  }
+
+// .lionReg {
+//   p {
+//     font-size: 0.8125rem;
+//     text-align: center;
+//     }
+//   }
+}
+
+// UPDATE CSS
+body.home #nav-container-desktop {
+  display: none;
+}
+.click-tap-download-copy {
+  font-size: 1.25rem;
+}
+.callout-container {
+  padding: 2% 4% 2% 4%;
+  margin-bottom: 2%;
+  @include breakpoint(small down) {
+    padding: 2.5% 2%;
+  }
+  p {
+    font-size: 1.5rem;
+    line-height: 1.875rem;
+    margin-bottom: 0;
+    @include breakpoint(small down) {
+      font-size: 0.875rem;
+      line-height: 1.0625rem;
+    }
+  }
+  &.callout-inqovi {
+    background-color: $color-five;
+    color: $white;
+  }
+  &.callout-lonsurf {
+    background-color: $color-four;
+    color: $white;
+  }
+}
+body.interior-page.inqovi h1 {
+    color: #333F48;  
+}

@@ -31,3 +31,4 @@ COPY --from=builder /app/public /usr/share/nginx/html
 
 # Start Nginx in the foreground
 CMD ["nginx", "-g", "daemon off;"]
+

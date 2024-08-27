@@ -16,9 +16,9 @@ RUN npm install --legacy-peer-deps
 # Copy the entire application code
 COPY . .
 
-# FROM gatsbyjs/gatsby:onbuild as build
+FROM gatsbyjs/gatsby:onbuild as build
 
-RUN gatsby build
+# RUN gatsby build
 
 
 

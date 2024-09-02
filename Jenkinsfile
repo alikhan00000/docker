@@ -73,7 +73,7 @@ pipeline {
                 script {
                     powershell '''
                     # Define paths
-                    $sourceDir = "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\docker9\\docker"
+                    $sourceDir = "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\docker-uat\\docker"
                     $zipFile = "${env.WORKSPACE}\\BookAppFrontend.zip"
                     $sevenZipPath = "C:\\Program Files\\7-Zip\\7z.exe"
         

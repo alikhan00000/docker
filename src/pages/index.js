@@ -11,7 +11,7 @@ const IndexPage = () => (
     <Helmet bodyAttributes={{ class: 'home' }} />
     <Seo title="Home" />
 
-    <h1 className="show-for-large">shut up 1234666 </h1>
+    <h1 className="show-for-large">kaam sy kaaam  1234666 </h1>
     <h1 className="hide-for-large">Tap the brand icon below to view resources related to product, access, and patient resource information.</h1>
 
     <div className="row d-flex">

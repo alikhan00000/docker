@@ -203,7 +203,7 @@ pipeline {
                     """
                     echo "Elastic Beanstalk deployment initiated successfully with version ${env.VERSION_LABEL}"
                     
-                    sleep(time: 11 * 60, unit: 'SECONDS')
+                    // sleep(time:  * 60, unit: 'SECONDS')
 
                     // Wait for environment update to complete
                    

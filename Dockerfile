@@ -31,6 +31,10 @@ EXPOSE 80
 # Copy the build files from the builder stage to the Nginx HTML directory
 COPY --from=builder /app/public /usr/share/nginx/html
 
+# Copy custom Nginx configuration
+COPY nginx.conf /etc/nginx/nginx.conf
+
+
 # Start Nginx in the foreground
 CMD ["nginx", "-g", "daemon off;"]
 
